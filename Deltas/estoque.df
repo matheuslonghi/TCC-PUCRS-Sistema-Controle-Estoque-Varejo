@@ -1,0 +1,85 @@
+ADD TABLE "Estoque"
+  AREA "Schema Area"
+  DESCRIPTION "Cadastro e Manutenção de Estoque"
+  DUMP-NAME "estoque"
+
+ADD FIELD "usuario-id" OF "Estoque" AS integer 
+  DESCRIPTION "ID Usuario"
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "ID Usuario"
+  POSITION 2
+  MAX-WIDTH 4
+  COLUMN-LABEL "ID Usuario"
+  ORDER 10
+  MANDATORY
+
+ADD FIELD "estoque-id" OF "Estoque" AS integer 
+  DESCRIPTION "ID Estoque"
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "ID Estoque"
+  POSITION 3
+  MAX-WIDTH 4
+  COLUMN-LABEL "ID Estoque"
+  ORDER 20
+  MANDATORY
+
+ADD FIELD "estoque-mes" OF "Estoque" AS integer 
+  DESCRIPTION "Mês"
+  FORMAT "99"
+  INITIAL "0"
+  LABEL "Mês"
+  POSITION 4
+  MAX-WIDTH 4
+  COLUMN-LABEL "Mês"
+  ORDER 30
+
+ADD FIELD "estoque-ano" OF "Estoque" AS integer 
+  DESCRIPTION "Ano"
+  FORMAT "9999"
+  INITIAL "0"
+  LABEL "Ano"
+  POSITION 5
+  MAX-WIDTH 4
+  COLUMN-LABEL "Ano"
+  ORDER 40
+
+ADD FIELD "estoque-dataAlt" OF "Estoque" AS date 
+  DESCRIPTION "Data Alteração"
+  FORMAT "99/99/9999"
+  INITIAL ?
+  LABEL "Data"
+  POSITION 6
+  MAX-WIDTH 4
+  COLUMN-LABEL "Data"
+  ORDER 50
+
+ADD FIELD "estoque-horaAlt" OF "Estoque" AS integer 
+  DESCRIPTION "Hora Alteração"
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "Hora"
+  POSITION 7
+  MAX-WIDTH 4
+  COLUMN-LABEL "Hora"
+  ORDER 60
+
+ADD INDEX "estoque01" ON "Estoque" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "usuario-id" ASCENDING 
+  INDEX-FIELD "estoque-id" ASCENDING 
+
+ADD INDEX "estoque02" ON "Estoque" 
+  AREA "Schema Area"
+  INDEX-FIELD "usuario-id" ASCENDING 
+  INDEX-FIELD "estoque-mes" ASCENDING 
+  INDEX-FIELD "estoque-ano" ASCENDING 
+
+.
+PSC
+cpstream=ISO8859-1
+.
+0000001676

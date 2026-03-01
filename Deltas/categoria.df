@@ -1,0 +1,69 @@
+ADD TABLE "Categoria"
+  AREA "Schema Area"
+  DESCRIPTION "Cadastro e Manutenção de Categoria"
+  DUMP-NAME "categoria"
+
+ADD FIELD "usuario-id" OF "Categoria" AS integer 
+  DESCRIPTION "ID Usuario"
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "ID Usuario"
+  POSITION 2
+  MAX-WIDTH 4
+  COLUMN-LABEL "ID Usuario"
+  ORDER 10
+  MANDATORY
+
+ADD FIELD "categoria-id" OF "Categoria" AS integer 
+  DESCRIPTION "ID Categoria"
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "ID Categoria"
+  POSITION 3
+  MAX-WIDTH 4
+  COLUMN-LABEL "ID Categoria"
+  ORDER 20
+  MANDATORY
+
+ADD FIELD "categoria-descricao" OF "Categoria" AS character 
+  DESCRIPTION "Descrição"
+  FORMAT "x(50)"
+  INITIAL ""
+  LABEL "Descrição"
+  POSITION 4
+  MAX-WIDTH 100
+  COLUMN-LABEL "Descrição"
+  ORDER 30
+
+ADD FIELD "categoria-dataAlt" OF "Categoria" AS date 
+  DESCRIPTION "Data Alteração"
+  FORMAT "99/99/9999"
+  INITIAL ?
+  LABEL "Data"
+  POSITION 5
+  MAX-WIDTH 4
+  COLUMN-LABEL "Data"
+  ORDER 40
+
+ADD FIELD "categoria-horaAlt" OF "Categoria" AS integer 
+  DESCRIPTION "Hora Alteração"
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "Hora"
+  POSITION 6
+  MAX-WIDTH 4
+  COLUMN-LABEL "Hora"
+  ORDER 50
+
+ADD INDEX "categoria01" ON "Categoria" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "usuario-id" ASCENDING 
+  INDEX-FIELD "categoria-id" ASCENDING 
+
+.
+PSC
+cpstream=ISO8859-1
+.
+0000001379

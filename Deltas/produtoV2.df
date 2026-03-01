@@ -1,0 +1,121 @@
+ADD TABLE "Produto"
+  AREA "Schema Area"
+  DESCRIPTION "Cadastro e Manutenção de Produto"
+  DUMP-NAME "produto"
+
+ADD FIELD "usuario-id" OF "Produto" AS integer 
+  DESCRIPTION "ID Usuario"
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "ID Usuario"
+  POSITION 2
+  MAX-WIDTH 4
+  COLUMN-LABEL "ID Usuario"
+  ORDER 10
+  MANDATORY
+
+ADD FIELD "produto-id" OF "Produto" AS integer 
+  DESCRIPTION "ID Produto"
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "ID Produto"
+  POSITION 3
+  MAX-WIDTH 4
+  COLUMN-LABEL "ID Produto"
+  ORDER 20
+  MANDATORY
+
+ADD FIELD "categoria-id" OF "Produto" AS integer 
+  DESCRIPTION "ID Categoria"
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "ID Categoria"
+  POSITION 4
+  MAX-WIDTH 4
+  COLUMN-LABEL "ID Categoria"
+  ORDER 30
+
+ADD FIELD "produto-valor" OF "Produto" AS decimal 
+  DESCRIPTION "Valor Base"
+  FORMAT "->>,>>9.99"
+  INITIAL "0"
+  LABEL "Valor Base"
+  POSITION 5
+  MAX-WIDTH 17
+  COLUMN-LABEL "Valor Base"
+  DECIMALS 2
+  ORDER 40
+
+ADD FIELD "produto-valorVarejo" OF "Produto" AS decimal 
+  DESCRIPTION "Valor Varejo"
+  FORMAT "->>,>>9.99"
+  INITIAL "0"
+  LABEL "Valor Varejo"
+  POSITION 6
+  MAX-WIDTH 17
+  COLUMN-LABEL "Valor Varejo"
+  DECIMALS 2
+  ORDER 50
+
+ADD FIELD "produto-estoqueCritico" OF "Produto" AS integer 
+  DESCRIPTION "Estoque Minimo para alertas"
+  FORMAT ">>>>9"
+  INITIAL "0"
+  LABEL "Estoque Minimo"
+  POSITION 7
+  MAX-WIDTH 4
+  COLUMN-LABEL "Estoque Minimo"
+  ORDER 60
+
+ADD FIELD "produto-imagem" OF "Produto" AS character 
+  DESCRIPTION "Imagem"
+  FORMAT "x(250)"
+  INITIAL ""
+  LABEL "Imagem"
+  POSITION 8
+  MAX-WIDTH 500
+  COLUMN-LABEL "Imagem"
+  ORDER 70
+
+ADD FIELD "produto-dataAlt" OF "Produto" AS date 
+  DESCRIPTION "Data Alteração"
+  FORMAT "99/99/9999"
+  INITIAL ?
+  LABEL "Data"
+  POSITION 9
+  MAX-WIDTH 4
+  COLUMN-LABEL "Data"
+  ORDER 80
+
+ADD FIELD "produto-horaAlt" OF "Produto" AS integer 
+  DESCRIPTION "Hora Alteração"
+  FORMAT "->,>>>,>>9"
+  INITIAL "0"
+  LABEL "Hora"
+  POSITION 10
+  MAX-WIDTH 4
+  COLUMN-LABEL "Hora"
+  ORDER 90
+
+ADD FIELD "produto-nome" OF "Produto" AS character 
+  DESCRIPTION "Nome do Produto"
+  FORMAT "x(50)"
+  INITIAL ""
+  LABEL "Nome"
+  POSITION 11
+  MAX-WIDTH 100
+  COLUMN-LABEL "Nome"
+  ORDER 100
+
+ADD INDEX "produto01" ON "Produto" 
+  AREA "Schema Area"
+  UNIQUE
+  PRIMARY
+  INDEX-FIELD "usuario-id" ASCENDING 
+  INDEX-FIELD "produto-id" ASCENDING 
+
+.
+PSC
+cpstream=ISO8859-1
+.
+0000002461
