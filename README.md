@@ -1,1 +1,1 @@
-Trabalho de Conclusão de Curso PUCRS
+Trabalho de Conclusão de Curso - Sistemas de Informação - PUCRS
